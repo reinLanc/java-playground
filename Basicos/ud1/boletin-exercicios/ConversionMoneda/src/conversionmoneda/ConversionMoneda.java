@@ -33,13 +33,11 @@ public class ConversionMoneda {
 
         // Mostrar resultados
         System.out.println("=== CONVERSOR DE MONEDA ===");
-        System.out.println("Cantidad original: " + cantidadEuros + " EUR");
-        System.out.println();
+        System.out.println("Cantidad original: " + cantidadEuros + " EUR\n");
         System.out.println("Conversiones:");
         System.out.println("En dólares (USD): " + cantidadDolares);
         System.out.println("En libras (GBP): " + cantidadLibras);
-        System.out.println("En yenes (JPY): " + cantidadYenes);
-        System.out.println();
+        System.out.println("En yenes (JPY): " + cantidadYenes + "\n");
 
         // Suma simbólica (aunque no tiene sentido sumar diferentes monedas)
         double sumaSimbolica = cantidadDolares + cantidadLibras + cantidadYenes;
