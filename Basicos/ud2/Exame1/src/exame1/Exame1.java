@@ -1,6 +1,5 @@
 package exame1;
 import java.util.Scanner;
-
 /**
  Calcular si un numero es positivo negativo o cero.
  * @author Reinaldo Gil
@@ -21,5 +20,4 @@ public class Exame1 {
             System.out.println("El número es cero");
         }
     }
-
 }

@@ -8,10 +8,6 @@ import java.util.Scanner;
  * @author Reinaldo Gil
  */
 public class Exame6Fibonacci {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         

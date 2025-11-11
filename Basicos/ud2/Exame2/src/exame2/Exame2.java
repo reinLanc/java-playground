@@ -1,7 +1,5 @@
 package exame2;
-
 import java.util.Scanner;
-
 /**
  Estructura de asteriscos
  * @author Reinaldo Gil

@@ -28,5 +28,4 @@ public class Exame3 {
                 System.out.println(numero + " no es potencia de dos.");
         }
     }
-
 }

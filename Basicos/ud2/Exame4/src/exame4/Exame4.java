@@ -30,5 +30,4 @@ public class Exame4 {
 
         System.out.println("El término P(" + n + ") = " + pn);
     }
-
 }
