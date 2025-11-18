@@ -25,7 +25,7 @@ public class UD2_Ampliacion1 {
             double nota=teclado.nextDouble();
             while(nota < 0 || nota > 10){
                 System.out.print("ERROR. Introduzca la nota del alumno número "+i+" : ");
-                nota=teclado.nextInt();                
+                nota=teclado.nextDouble();                
             }
             
             if (nota >= 5) {
