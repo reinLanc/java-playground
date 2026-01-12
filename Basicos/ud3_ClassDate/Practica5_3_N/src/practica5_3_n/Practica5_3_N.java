@@ -15,7 +15,7 @@ public class Practica5_3_N {
         LocalDateTime fecha1,fecha2;
         Duration intervalo;
 
-        System.out.println("Introduce la fecha primera fecha:");
+        System.out.println("Introduce la primera fecha:");
         cadea = teclado.nextLine();
         fecha1 = LocalDateTime.parse(cadea, formato);
         System.out.println("Introduce la fecha segunda fecha:");
