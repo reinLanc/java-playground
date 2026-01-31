@@ -30,14 +30,14 @@ public class SistemaGestionEmpleados {
         Scanner teclado = new Scanner(System.in);
         ArrayList<Empleable> empleados = new ArrayList<>();
 
-        System.out.println("???????????????????????????????????????????????????????????");
-        System.out.println("     SISTEMA DE GESTIÓN DE EMPLEADOS CON INTERFACE         ");
-        System.out.println("???????????????????????????????????????????????????????????\n");
+        System.out.println("===============================================================");
+        System.out.println("     SISTEMA DE GESTION DE EMPLEADOS CON INTERFACE         ");
+        System.out.println("===============================================================\n");
 
         // Mostramos información estática inicial
-        System.out.println("INFORMACIÓN GENERAL DE LA EMPRESA:");
-        System.out.println("   • Salario mínimo: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
-        System.out.println("   • IRPF: 15% | Seguridad Social: 6.35%");
+        System.out.println("INFORMACION GENERAL DE LA EMPRESA:");
+        System.out.println("   - Salario minimo: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
+        System.out.println("   - IRPF: 15% | Seguridad Social: 6.35%");
         System.out.println();
 
         boolean continuar = true;
@@ -49,10 +49,10 @@ public class SistemaGestionEmpleados {
 
             switch (opcion) {
                 case 1:
-                    añadirEmpleadoPorHoras(teclado, empleados);
+                    anadirEmpleadoPorHoras(teclado, empleados);
                     break;
                 case 2:
-                    añadirEmpleadoFijo(teclado, empleados);
+                    anadirEmpleadoFijo(teclado, empleados);
                     break;
                 case 3:
                     listarEmpleados(empleados);
@@ -71,31 +71,31 @@ public class SistemaGestionEmpleados {
                     break;
                 case 8:
                     continuar = false;
-                    System.out.println("\n¡Hasta luego!");
+                    System.out.println("\nHasta luego!");
                     break;
                 default:
-                    System.out.println("\nOpción no válida.");
+                    System.out.println("\nOpcion no valida.");
             }
         }
     }
 
     private static void mostrarMenu() {
-        System.out.println("\n???????????????????????????????????????????????????????????");
-        System.out.println("                         MENÚ                               ");
-        System.out.println("???????????????????????????????????????????????????????????");
-        System.out.println("  1. Añadir empleado por horas                             ");
-        System.out.println("  2. Añadir empleado fijo                                  ");
+        System.out.println("\n===============================================================");
+        System.out.println("                         MENU                               ");
+        System.out.println("===============================================================");
+        System.out.println("  1. Anadir empleado por horas                             ");
+        System.out.println("  2. Anadir empleado fijo                                  ");
         System.out.println("  3. Listar todos los empleados                            ");
-        System.out.println("  4. Mostrar nómina mensual                                ");
-        System.out.println("  5. Ver estadísticas                                      ");
-        System.out.println("  6. Modificar salario mínimo                              ");
-        System.out.println("  7. Demostración de conceptos (STATIC & INTERFACE)        ");
+        System.out.println("  4. Mostrar nomina mensual                                ");
+        System.out.println("  5. Ver estadisticas                                      ");
+        System.out.println("  6. Modificar salario minimo                              ");
+        System.out.println("  7. Demostracion de conceptos (STATIC & INTERFACE)        ");
         System.out.println("  8. Salir                                                 ");
-        System.out.println("???????????????????????????????????????????????????????????");
-        System.out.print("Selecciona una opción: ");
+        System.out.println("===============================================================");
+        System.out.print("Selecciona una opcion: ");
     }
 
-    private static void añadirEmpleadoPorHoras(Scanner teclado, ArrayList<Empleable> empleados) {
+    private static void anadirEmpleadoPorHoras(Scanner teclado, ArrayList<Empleable> empleados) {
         System.out.println("\n--- NUEVO EMPLEADO POR HORAS ---");
 
         System.out.print("Nombre: ");
@@ -108,18 +108,18 @@ public class SistemaGestionEmpleados {
         int horas = teclado.nextInt();
         teclado.nextLine();
 
-        System.out.print("Tarifa por hora (€): ");
+        System.out.print("Tarifa por hora: ");
         double tarifa = teclado.nextDouble();
         teclado.nextLine();
 
         EmpleadoPorHoras empleado = new EmpleadoPorHoras(nombre, departamento, horas, tarifa);
         empleados.add(empleado);
 
-        System.out.println("\nEmpleado añadido correctamente.");
+        System.out.println("\nEmpleado anadido correctamente.");
         System.out.println("  ID asignado: " + empleado.getId());
     }
 
-    private static void añadirEmpleadoFijo(Scanner teclado, ArrayList<Empleable> empleados) {
+    private static void anadirEmpleadoFijo(Scanner teclado, ArrayList<Empleable> empleados) {
         System.out.println("\n--- NUEVO EMPLEADO FIJO ---");
 
         System.out.print("Nombre: ");
@@ -128,25 +128,25 @@ public class SistemaGestionEmpleados {
         System.out.print("Departamento: ");
         String departamento = teclado.nextLine();
 
-        System.out.print("Salario mensual (€): ");
+        System.out.print("Salario mensual: ");
         double salario = teclado.nextDouble();
         teclado.nextLine();
 
-        System.out.print("Bonificación (% sobre salario): ");
+        System.out.print("Bonificacion (% sobre salario): ");
         double bonificacion = teclado.nextDouble();
         teclado.nextLine();
 
         EmpleadoFijo empleado = new EmpleadoFijo(nombre, departamento, salario, bonificacion);
         empleados.add(empleado);
 
-        System.out.println("\nEmpleado añadido correctamente.");
+        System.out.println("\nEmpleado anadido correctamente.");
         System.out.println("  ID asignado: " + empleado.getId());
     }
 
     private static void listarEmpleados(ArrayList<Empleable> empleados) {
-        System.out.println("\n???????????????????????????????????????????????????????????");
+        System.out.println("\n===============================================================");
         System.out.println("               LISTADO DE EMPLEADOS                         ");
-        System.out.println("???????????????????????????????????????????????????????????\n");
+        System.out.println("===============================================================\n");
 
         if (empleados.isEmpty()) {
             System.out.println("No hay empleados registrados.");
@@ -162,9 +162,9 @@ public class SistemaGestionEmpleados {
     }
 
     private static void mostrarNominaMensual(ArrayList<Empleable> empleados) {
-        System.out.println("\n???????????????????????????????????????????????????????????");
-        System.out.println("                  NÓMINA MENSUAL                            ");
-        System.out.println("???????????????????????????????????????????????????????????\n");
+        System.out.println("\n===============================================================");
+        System.out.println("                  NOMINA MENSUAL                            ");
+        System.out.println("===============================================================\n");
 
         if (empleados.isEmpty()) {
             System.out.println("No hay empleados registrados.");
@@ -176,7 +176,7 @@ public class SistemaGestionEmpleados {
         double totalNeto = 0;
 
         System.out.println("ID    Nombre                    Bruto        Deducciones    Neto");
-        System.out.println("??????????????????????????????????????????????????????????????????????");
+        System.out.println("-----------------------------------------------------------------------");
 
         for (Empleable emp : empleados) {
             double bruto = emp.calcularSalarioBruto();
@@ -195,7 +195,7 @@ public class SistemaGestionEmpleados {
             totalNeto += neto;
         }
 
-        System.out.println("??????????????????????????????????????????????????????????????????????");
+        System.out.println("-----------------------------------------------------------------------");
         System.out.printf("%-26s %10s   %10s   %10s%n",
                 "TOTALES:",
                 Empleado.formatearEuros(totalBruto),
@@ -204,14 +204,14 @@ public class SistemaGestionEmpleados {
     }
 
     private static void mostrarEstadisticas(ArrayList<Empleable> empleados) {
-        System.out.println("\n???????????????????????????????????????????????????????????");
-        System.out.println("                    ESTADÍSTICAS                            ");
-        System.out.println("???????????????????????????????????????????????????????????\n");
+        System.out.println("\n===============================================================");
+        System.out.println("                    ESTADISTICAS                            ");
+        System.out.println("===============================================================\n");
 
         System.out.println("Datos generales:");
-        System.out.println("   • Total de empleados: " + Empleado.getTotalEmpleados());
-        System.out.println("   • Salario medio: " + Empleado.formatearEuros(Empleado.calcularSalarioMedio()));
-        System.out.println("   • Salario mínimo empresa: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
+        System.out.println("   - Total de empleados: " + Empleado.getTotalEmpleados());
+        System.out.println("   - Salario medio: " + Empleado.formatearEuros(Empleado.calcularSalarioMedio()));
+        System.out.println("   - Salario minimo empresa: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
 
         if (!empleados.isEmpty()) {
             double salarioMasAlto = 0;
@@ -232,61 +232,61 @@ public class SistemaGestionEmpleados {
             }
 
             System.out.println("\nRangos salariales:");
-            System.out.println("   • Salario más alto: " + Empleado.formatearEuros(salarioMasAlto)
+            System.out.println("   - Salario mas alto: " + Empleado.formatearEuros(salarioMasAlto)
                     + " (" + empleadoMasAlto + ")");
-            System.out.println("   • Salario más bajo: " + Empleado.formatearEuros(salarioMasBajo)
+            System.out.println("   - Salario mas bajo: " + Empleado.formatearEuros(salarioMasBajo)
                     + " (" + empleadoMasBajo + ")");
         }
     }
 
     private static void modificarSalarioMinimo(Scanner teclado) {
-        System.out.println("\n--- MODIFICAR SALARIO MÍNIMO ---");
-        System.out.println("Salario mínimo actual: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
+        System.out.println("\n--- MODIFICAR SALARIO MINIMO ---");
+        System.out.println("Salario minimo actual: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
 
-        System.out.print("Nuevo salario mínimo (€): ");
+        System.out.print("Nuevo salario minimo: ");
         double nuevoSalario = teclado.nextDouble();
         teclado.nextLine();
 
         Empleado.setSalarioMinimo(nuevoSalario);
 
-        System.out.println("\nSalario mínimo actualizado: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
-        System.out.println("  (Afectará a los nuevos empleados que se den de alta)");
+        System.out.println("\nSalario minimo actualizado: " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
+        System.out.println("  (Afectara a los nuevos empleados que se den de alta)");
     }
 
     private static void demostrarConceptosStatic() {
-        System.out.println("\n???????????????????????????????????????????????????????????");
-        System.out.println("          DEMOSTRACIÓN: STATIC & INTERFACE                  ");
-        System.out.println("???????????????????????????????????????????????????????????\n");
+        System.out.println("\n===============================================================");
+        System.out.println("          DEMOSTRACION: STATIC & INTERFACE                  ");
+        System.out.println("===============================================================\n");
 
         System.out.println("CONCEPTOS DE STATIC:");
         System.out.println("   1. Atributos static (compartidos por todas las instancias):");
-        System.out.println("      • contadorId: genera IDs únicos automáticamente");
-        System.out.println("      • salarioMinimo: valor común para todos los empleados");
-        System.out.println("      • totalEmpleados: contador global");
+        System.out.println("      - contadorId: genera IDs unicos automaticamente");
+        System.out.println("      - salarioMinimo: valor comun para todos los empleados");
+        System.out.println("      - totalEmpleados: contador global");
 
-        System.out.println("\n   2. Métodos static (se pueden llamar sin crear objetos):");
-        System.out.println("      • Empleado.formatearEuros(1500) ? " + Empleado.formatearEuros(1500));
-        System.out.println("      • Empleado.getSalarioMinimo() ? " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
-        System.out.println("      • Empleado.calcularDeducciones(2000) ? " + Empleado.formatearEuros(Empleado.calcularDeducciones(2000)));
+        System.out.println("\n   2. Metodos static (se pueden llamar sin crear objetos):");
+        System.out.println("      - Empleado.formatearEuros(1500) -> " + Empleado.formatearEuros(1500));
+        System.out.println("      - Empleado.getSalarioMinimo() -> " + Empleado.formatearEuros(Empleado.getSalarioMinimo()));
+        System.out.println("      - Empleado.calcularDeducciones(2000) -> " + Empleado.formatearEuros(Empleado.calcularDeducciones(2000)));
 
         System.out.println("\n   3. Ventajas de static:");
-        System.out.println("      • Un solo valor compartido por todos (ahorro de memoria)");
-        System.out.println("      • Acceso sin necesidad de crear objetos");
-        System.out.println("      • Útil para constantes, contadores y utilidades");
+        System.out.println("      - Un solo valor compartido por todos (ahorro de memoria)");
+        System.out.println("      - Acceso sin necesidad de crear objetos");
+        System.out.println("      - Util para constantes, contadores y utilidades");
 
         System.out.println("\nCONCEPTOS DE INTERFACE:");
-        System.out.println("   1. Define un contrato (métodos que deben implementarse):");
-        System.out.println("      • calcularSalarioBruto()");
-        System.out.println("      • calcularSalarioNeto()");
-        System.out.println("      • obtenerInformacion()");
+        System.out.println("   1. Define un contrato (metodos que deben implementarse):");
+        System.out.println("      - calcularSalarioBruto()");
+        System.out.println("      - calcularSalarioNeto()");
+        System.out.println("      - obtenerInformacion()");
 
         System.out.println("\n   2. Polimorfismo:");
-        System.out.println("      • ArrayList<Empleable> puede contener EmpleadoPorHoras y EmpleadoFijo");
-        System.out.println("      • Tratamos diferentes tipos de empleados de forma uniforme");
+        System.out.println("      - ArrayList<Empleable> puede contener EmpleadoPorHoras y EmpleadoFijo");
+        System.out.println("      - Tratamos diferentes tipos de empleados de forma uniforme");
 
         System.out.println("\n   3. Ventajas de interfaces:");
-        System.out.println("      • Flexibilidad: múltiples clases pueden implementar la misma interface");
-        System.out.println("      • Desacoplamiento: el código no depende de la implementación concreta");
-        System.out.println("      • Contratos claros: sabemos qué métodos están disponibles");
+        System.out.println("      - Flexibilidad: multiples clases pueden implementar la misma interface");
+        System.out.println("      - Desacoplamiento: el codigo no depende de la implementacion concreta");
+        System.out.println("      - Contratos claros: sabemos que metodos estan disponibles");
     }
 }
