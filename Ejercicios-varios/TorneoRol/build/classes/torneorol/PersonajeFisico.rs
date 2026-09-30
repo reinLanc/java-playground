@@ -1,0 +1,2 @@
+torneorol.Mago
+torneorol.PersonajeFisico
